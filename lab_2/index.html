@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomé — квітковий магазин</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+    <div class="header__bg"></div>
+    <div class="container header__inner">
+        <div class="header__glass">
+            <p class="header__eyebrow">Крос-платформний застосунок</p>
+            <h1>Bloomé</h1>
+            <p class="header__subtitle">Замовляйте букети з телефону, планшета чи комп'ютера — інтерфейс однаково зручний на будь-якому екрані.</p>
+        </div>
+    </div>
+</header>
+
+<main class="container main">
+    <section class="card">
+        <h2>Про застосунок</h2>
+        <p>
+            «Bloomé» — навчальний приклад кросплатформного застосунку квіткового магазину.
+            Він відкривається просто в браузері й однаково добре виглядає на смартфоні,
+            планшеті та десктопі, без встановлення окремих версій під кожну платформу.
+        </p>
+        <p>
+            Інтерфейс побудовано на HTML і CSS, а взаємодію з кошиком замовлень реалізовано на JavaScript.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Що вміє застосунок</h2>
+        <ul class="features-list">
+            <li>Перегляд каталогу букетів з описом та ціною</li>
+            <li>Додавання обраного букета до кошика замовлень</li>
+            <li>Вказання отримувача для кожного замовлення</li>
+            <li>Видалення позицій з кошика</li>
+            <li>Адаптивний вигляд для мобільних пристроїв</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>Каталог букетів</h2>
+        <div class="catalog">
+            <article class="bouquet">
+                <img class="bouquet__photo" src="https://i.pinimg.com/1200x/48/6c/cd/486ccd93904e4ca592f61cdb5517192b.jpg" alt="Букет тюльпанів «Ранкова обіцянка»">
+                <div class="bouquet__body">
+                    <div class="bouquet__badge">Тюльпани</div>
+                    <h3>«Ранкова обіцянка»</h3>
+                    <p class="bouquet__price">450 грн</p>
+                </div>
+            </article>
+            <article class="bouquet">
+                <img class="bouquet__photo" src="https://i.pinimg.com/736x/f4/61/47/f461471272d44cc35430637201d72657.jpg" alt="Букет троянд «Оксамитовий вечір»">
+                <div class="bouquet__body">
+                    <div class="bouquet__badge">Троянди</div>
+                    <h3>«Оксамитовий вечір»</h3>
+                    <p class="bouquet__price">890 грн</p>
+                </div>
+            </article>
+            <article class="bouquet">
+                <img class="bouquet__photo" src="https://i.pinimg.com/1200x/88/32/e5/8832e5a4e3d545c1ddfae77598a24ff9.jpg" alt="Букет півоній «Пудрова мрія»">
+                <div class="bouquet__body">
+                    <div class="bouquet__badge">Півонії</div>
+                    <h3>«Пудрова мрія»</h3>
+                    <p class="bouquet__price">1050 грн</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Оформити замовлення</h2>
+        <label class="field-label" for="bouquetSelect">Букет</label>
+        <select id="bouquetSelect" class="field">
+            <option value="«Ранкова обіцянка» — 450 грн">«Ранкова обіцянка» — 450 грн</option>
+            <option value="«Оксамитовий вечір» — 890 грн">«Оксамитовий вечір» — 890 грн</option>
+            <option value="«Пудрова мрія» — 1050 грн">«Пудрова мрія» — 1050 грн</option>
+        </select>
+
+        <label class="field-label" for="recipientInput">Ім'я отримувача</label>
+        <input type="text" id="recipientInput" class="field" placeholder="Наприклад, Олена">
+
+        <button id="addOrderButton" class="button">Додати до кошика</button>
+        <p id="message" class="message"></p>
+    </section>
+
+    <section class="card">
+        <h2>Кошик замовлень</h2>
+        <ul id="ordersList" class="orders-list"></ul>
+    </section>
+
+    <section class="card">
+        <h2>Обраний стек технологій</h2>
+        <p>
+            Для застосунку обрано WebView-підхід: сторінка реалізована вебтехнологіями
+            і може відкриватися як у звичайному браузері, так і всередині мобільного
+            застосунку через WebView-компонент.
+        </p>
+        <table class="tech-table">
+            <thead>
+            <tr>
+                <th>Компонент</th>
+                <th>Технологія</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Структура сторінки</td>
+                <td>HTML</td>
+            </tr>
+            <tr>
+                <td>Оформлення</td>
+                <td>CSS</td>
+            </tr>
+            <tr>
+                <td>Логіка кошика</td>
+                <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>Платформа запуску</td>
+                <td>Браузер / WebView</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>Лабораторна робота 1.2: Основи кросплатформності — проєкт «Квітковий магазин»</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
