@@ -1,0 +1,43 @@
+### Отримати всі товари
+GET http://localhost:3000/api/products
+
+### Отримати товар за id
+GET http://localhost:3000/api/products/6aca41a0ee0784734b99d296
+
+### Створити новий товар
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "Ранкова обіцянка",
+  "description": "Весняний букет з тюльпанів",
+  "price": 450,
+  "flowers": "Тюльпани",
+  "occasion": "День народження",
+  "recipient": "Мама",
+  "color": "Рожевий"
+}
+
+### Створити товар без назви
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "description": "Букет без назви",
+  "price": 300
+}
+
+### Оновити товар
+PUT http://localhost:3000/api/products/6aca41a0ee0784734b99d296
+Content-Type: application/json
+
+{
+  "name": "Ранкова обіцянка",
+  "description": "Весняний букет з тюльпанів",
+  "price": 480,
+  "inStock": true
+}
+
+### Видалити товар
+DELETE http://localhost:3000/api/products/6aca41a0ee0784734b99d296
