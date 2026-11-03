@@ -1,8 +1,6 @@
 import jwt from "jsonwebtoken";
 import { users } from "./data.js";
 
-// У навчальному проєкті ключ лежить у коді.
-// У реальному проєкті його потрібно брати зі змінних середовища.
 export const JWT_SECRET = "bloome-secret-key";
 
 export function createToken(user) {
