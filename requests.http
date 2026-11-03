@@ -2,7 +2,7 @@
 GET http://localhost:3000/api/products
 
 ### Отримати товар за id
-GET http://localhost:3000/api/products/6aca41a0ee0784734b99d296
+GET http://localhost:3000/api/products/6ace17e4705dba75d33dca72
 
 ### Створити новий товар
 POST http://localhost:3000/api/products
@@ -29,7 +29,7 @@ Content-Type: application/json
 }
 
 ### Оновити товар
-PUT http://localhost:3000/api/products/6aca41a0ee0784734b99d296
+PUT http://localhost:3000/api/products/6ace17e4705dba75d33dca72
 Content-Type: application/json
 
 {
@@ -40,4 +40,4 @@ Content-Type: application/json
 }
 
 ### Видалити товар
-DELETE http://localhost:3000/api/products/6aca41a0ee0784734b99d296
+DELETE http://localhost:3000/api/products/6ace17e4705dba75d33dca72
