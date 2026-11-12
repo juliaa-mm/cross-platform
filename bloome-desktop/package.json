@@ -1,0 +1,12 @@
+{
+  "name": "bloome-desktop",
+  "version": "1.0.0",
+  "description": "Десктопна версія застосунку Bloomé для замовлень квітів",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^39.0.0"
+  }
+}
