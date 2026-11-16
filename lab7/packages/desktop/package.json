@@ -1,0 +1,18 @@
+{
+  "name": "bloome-monorepo-desktop",
+  "version": "1.0.0",
+  "description": "Десктопна версія застосунку Bloomé на спільному ядрі",
+  "private": true,
+  "type": "module",
+  "main": "main.js",
+  "dependencies": {
+    "@bloome/core": "*"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test"
+  }
+}

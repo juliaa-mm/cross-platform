@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://i.pinimg.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomé Desktop: замовлення</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div>
+            <h1 class="logo">Bloomé</h1>
+            <p class="logo-sub">Квіти з доставкою</p>
+
+            <nav class="nav">
+                <button class="nav-btn active" data-tab="home">Головна</button>
+                <button class="nav-btn" data-tab="catalog">Каталог</button>
+                <button class="nav-btn" data-tab="orders">
+                    Замовлення
+                    <span id="ordersBadge" class="badge hidden">0</span>
+                </button>
+            </nav>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <span class="stat__label">Усього замовлень</span>
+                <span class="stat__value" id="totalCount">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat__label">Доставлено</span>
+                <span class="stat__value" id="doneCount">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat__label">Сума</span>
+                <span class="stat__value"><span id="sumValue">0</span> грн</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="content">
+        <section id="tab-home" class="tab">
+            <div class="hero">
+                <h2>Квіти з доставкою</h2>
+                <p>Оберіть букет, вкажіть дату й отримувача, а решту ми візьмемо на себе.</p>
+                <div class="hero__buttons">
+                    <button class="pill pill--filled" id="goCatalog">До каталогу</button>
+                    <button class="pill pill--outline" id="goOrders">Мої замовлення</button>
+                </div>
+            </div>
+            <h3 class="section-title">Популярні букети</h3>
+            <div class="grid grid--one-row" id="popularList"></div>
+        </section>
+
+        <section id="tab-catalog" class="tab hidden">
+            <h2 class="page-title">Каталог квітів</h2>
+            <div class="grid" id="catalogList"></div>
+        </section>
+
+        <section id="tab-orders" class="tab hidden">
+            <h2 class="page-title">Замовлення</h2>
+            <div class="orders-layout">
+                <div class="card">
+                    <h3>Додати замовлення</h3>
+
+                    <span class="field-label">Букет</span>
+                    <div class="chips" id="bouquetChips"></div>
+
+                    <label class="field-label" for="recipientInput">Ім'я отримувача</label>
+                    <input type="text" id="recipientInput" class="field" placeholder="Наприклад, Олена">
+
+                    <label class="field-label" for="dateInput">Дата доставки</label>
+                    <input type="date" id="dateInput" class="field">
+
+                    <label class="field-label" for="cardInput">Текст листівки (необов'язково)</label>
+                    <input type="text" id="cardInput" class="field" placeholder="З днем народження!">
+
+                    <button id="addOrderButton" class="pill pill--filled pill--wide">Додати замовлення</button>
+                    <p id="message" class="message"></p>
+                </div>
+
+                <div class="card">
+                    <h3>Список замовлень</h3>
+                    <input type="search" id="searchInput" class="field" placeholder="Пошук за отримувачем або букетом">
+                    <p class="hint">Постав прапорець, щоб позначити замовлення доставленим.</p>
+                    <ul id="ordersList" class="orders-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

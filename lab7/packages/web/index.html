@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomé — квітковий магазин</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        { "imports": { "@bloome/core": "/node_modules/@bloome/core/index.js" } }
+    </script>
+</head>
+<body>
+<header class="header">
+    <div class="header__bg"></div>
+    <div class="container header__inner">
+        <div class="header__glass">
+            <p class="header__eyebrow">Крос-платформний застосунок</p>
+            <h1>Bloomé</h1>
+            <p class="header__subtitle">Замовляйте букети з телефону, планшета чи комп'ютера — інтерфейс однаково зручний на будь-якому екрані.</p>
+        </div>
+    </div>
+</header>
+
+<main class="container main">
+    <section class="card">
+        <h2>Про застосунок</h2>
+        <p>
+            «Bloomé» — навчальний приклад кросплатформного застосунку квіткового магазину.
+            Він відкривається просто в браузері й однаково добре виглядає на смартфоні,
+            планшеті та десктопі, без встановлення окремих версій під кожну платформу.
+        </p>
+        <p>
+            Правила перевірки замовлень, каталог букетів і пошук винесено в спільне ядро @bloome/core,
+            яким користуються і веб-версія, і десктопна версія на Electron.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Каталог букетів</h2>
+        <div class="catalog-slider">
+            <button class="catalog-arrow catalog-arrow--prev" id="catalogPrev" aria-label="Попередні букети">&#8249;</button>
+            <div class="catalog-track" id="catalogList"></div>
+            <button class="catalog-arrow catalog-arrow--next" id="catalogNext" aria-label="Наступні букети">&#8250;</button>
+        </div>
+        <div class="catalog-dots" id="catalogDots"></div>
+    </section>
+
+    <section class="card">
+        <h2>Оформити замовлення</h2>
+        <label class="field-label" for="bouquetSelect">Букет</label>
+        <select id="bouquetSelect" class="field"></select>
+
+        <label class="field-label" for="recipientInput">Ім'я отримувача</label>
+        <input type="text" id="recipientInput" class="field" placeholder="Наприклад, Олена">
+
+        <label class="field-label" for="dateInput">Дата доставки</label>
+        <input type="date" id="dateInput" class="field">
+
+        <label class="field-label" for="cardInput">Текст листівки (необов'язково)</label>
+        <input type="text" id="cardInput" class="field" placeholder="З днем народження!">
+
+        <button id="addOrderButton" class="button">Додати до кошика</button>
+        <p id="message" class="message"></p>
+    </section>
+
+    <section class="card">
+        <h2>Кошик замовлень</h2>
+        <div class="stats">
+            <span>Усього: <strong id="totalCount">0</strong></span>
+            <span>Доставлено: <strong id="doneCount">0</strong></span>
+            <span>Сума: <strong id="sumValue">0</strong> грн</span>
+        </div>
+        <input type="search" id="searchInput" class="field" placeholder="Пошук за отримувачем, букетом або листівкою">
+        <p class="hint">Поставте прапорець, щоб позначити замовлення доставленим.</p>
+        <ul id="ordersList" class="orders-list"></ul>
+    </section>
+
+    <section class="card">
+        <h2>Обраний стек технологій</h2>
+        <table class="tech-table">
+            <thead>
+            <tr>
+                <th>Компонент</th>
+                <th>Технологія</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Структура та оформлення</td>
+                <td>HTML, CSS</td>
+            </tr>
+            <tr>
+                <td>Правила перевірки, пошук, сортування</td>
+                <td>Спільне ядро @bloome/core (JavaScript, модулі ES)</td>
+            </tr>
+            <tr>
+                <td>Збереження замовлень</td>
+                <td>localStorage (адаптер LocalStorageAdapter)</td>
+            </tr>
+            <tr>
+                <td>Платформа запуску</td>
+                <td>Браузер / WebView</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>Лабораторна робота 7: Спільний код крос-платформного застосунку — веб-клієнт «Квітковий магазин»</p>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

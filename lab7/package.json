@@ -1,0 +1,13 @@
+{
+  "name": "bloome-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm test --workspaces --if-present",
+    "start:web": "npm run start -w bloome-web",
+    "start:desktop": "npm run start -w bloome-monorepo-desktop"
+  }
+}
